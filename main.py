@@ -19,9 +19,12 @@ Morse_code_trans = {'A': '.-', 'B': '-...',
 
 text_to_translate = input("Please enter what you would like to translate into Morse Code: ").upper()
 text_list = list(text_to_translate)
-translation = ""
+translationRead = ""
+rawTranslation = ""
 for trans_char in text_list:
     for morse_char in Morse_code_trans:
         if trans_char == morse_char:
-            translation += "|" + trans_char + " " + Morse_code_trans.get(morse_char) + " "
-print(translation + "|")
+            translationRead += "|" + trans_char + " " + Morse_code_trans.get(morse_char) + " "
+            rawTranslation += Morse_code_trans.get(morse_char)
+print(translationRead + "|")
+print("Raw Morse Code: " + rawTranslation)
